@@ -1,4 +1,7 @@
 import React from "react";
+import VolumeDown from "@material-ui/icons/VolumeDown";
+import VolumeUp from "@material-ui/icons/VolumeUp";
+import Slider from "@material-ui/core/Slider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlay,
@@ -43,6 +46,14 @@ const Player = ({
       audioRef.current.play();
       setIsPlaying(!isPlaying);
     }
+  };
+  // Volume State
+  const [volume, setVolume] = React.useState(0.5);
+  // Volume Hanlder
+  const handleChange = (event, newValue) => {
+    setVolume(newValue);
+    console.log(volume);
+    audioRef.current.volume = volume;
   };
 
   const getTime = (time) => {
@@ -100,6 +111,19 @@ const Player = ({
           <div style={trackAnim} className="animate-track"></div>
         </div>
         <p>{songInfo.duration ? getTime(songInfo.duration) : "0:00"}</p>
+      </div>
+      <div className="volume">
+        <VolumeDown className="volumeItem" />
+        <Slider
+          className="volumeItem"
+          min={0}
+          max={1}
+          step={0.01}
+          value={volume}
+          onChange={handleChange}
+          aria-labelledby="continuous-slider"
+        />
+        <VolumeUp className="volumeItem" />
       </div>
       <div className="play-control">
         <FontAwesomeIcon
