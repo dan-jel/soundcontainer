@@ -1,6 +1,6 @@
 # Music Webplayer
 
-In diesem React Projekt habe ich einen Musik Player gebaut, welcher Songs von [Chillhop](https://mp3.chillhop.com/) spielt. Ich habe eine kleine Library erstellt, welche sich noch beliebig manuell erweitern ließe.
+In diesem React Projekt habe ich einen Musik Player gebaut, welcher Songs von [Chillhop](https://chillhop.com/) spielt. Ich habe eine kleine Library erstellt, welche sich noch beliebig manuell erweitern ließe.
 Die React Website ist zusammen mit einem Nginx Server in einem Docker Container [hier](http://h2911972.stratoserver.net:90/) zu sehen.
 
 ---
@@ -37,7 +37,7 @@ docker run -d -p 80:80 --rm soundcontainer
 
 ---
 
-Um weitere Lieder aus anderen Quellen hinzuzufügen, muss man nur die `data.js` im vorhandenen Format um die gewünschten Lieder erweitern.
+Um weitere Lieder aus anderen Quellen hinzuzufügen, muss man nur `data.js` im vorhandenen Format um die gewünschten Lieder erweitern.
 
 ```bash
 {
